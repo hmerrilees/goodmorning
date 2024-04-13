@@ -8,6 +8,4 @@ fn main() {
     println!("Good morning!");
     let LCOutput { roll, virtue } = LudusClaricalis::play();
     println!("{roll} -- today will be a day of {virtue}.");
-
-    std::thread::sleep(std::time::Duration::from_secs(2));
 }
