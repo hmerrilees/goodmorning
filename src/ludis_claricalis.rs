@@ -16,7 +16,7 @@ impl LudusClaricalis {
     #[must_use]
     pub fn play(duration_ms: usize) -> Output {
         let ludus = Self::new();
-        Self::roll_animation(4000);
+        Self::roll_animation(duration_ms);
 
         Output {
             roll: ludus.roll_string(),
