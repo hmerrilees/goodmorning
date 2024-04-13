@@ -14,7 +14,7 @@ pub struct Output {
 
 impl LudusClaricalis {
     #[must_use]
-    pub fn play() -> Output {
+    pub fn play(duration_ms: usize) -> Output {
         let ludus = Self::new();
         Self::roll_animation(4000);
 
@@ -111,12 +111,13 @@ impl LudusClaricalis {
     }
 
     /// Like a slot machine, successively print random rolls and then wipe the line.
-    fn roll_animation(overall_ms: usize) {
+    /// duration_ms is the total duration of the animation in milliseconds.
+    fn roll_animation(duration_ms: usize) {
         let mut rolls = Self::roll_permutations();
         let num_rolls = rolls.len();
         rolls.shuffle(&mut rand::thread_rng());
 
-        let avg_delay = overall_ms as f64 / rolls.len() as f64;
+        let avg_delay = duration_ms as f64 / rolls.len() as f64;
 
         for (i, roll) in rolls.into_iter().enumerate() {
             let animation_fraction = i as f64 / num_rolls as f64;
