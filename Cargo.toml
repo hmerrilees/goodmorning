@@ -1,0 +1,12 @@
+[package]
+name = "goodmorning"
+description = "A morning greeting cli that uses the Wibold of Cambrai's Ludus Claricalis to determine the virtue of the day."
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+itertools = "0.12.1"
+rand = "0.8.5"
